@@ -64,7 +64,10 @@
             display: flex;
             align-items: center; /* จัดแนวในแนวตั้งให้กลาง */
             justify-content: space-between; /* ให้พื้นที่ว่างระหว่างข้อความและรูปภาพ */
-            padding: 20px; /* เพิ่มช่องว่างรอบๆ */
+            padding: 0; /* เพิ่มช่องว่างรอบๆ */
+            margin: 0;
+            width: 50%;
+        
         }
         .text {
             max-width: 50%; /* กำหนดความกว้างสูงสุดของข้อความ */
@@ -77,13 +80,51 @@
             height: auto; /* ป้องกันการบิดเบี้ยวของรูปภาพ */
         }
         
-        
+        .container img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .container1 {
+            width: 50%;
+            text-align: center;
+        }
+
+        .values {
+            display: flex;
+            justify-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+        .value-heading {
+            font-size: 24px; /* Adjust the font size as needed */
+            font-weight: bold;
+            /* margin-bottom: 20px; Adds space below the heading */
+        }
     </style>
 </head>
+<nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50">
+    <img src="image/second shower logo.png" alt="Centered Image" class="nav-logo absolute">
+    <div class="container mx-auto flex justify-between items-center">
+        <ul class="flex space-x-5">
+            <li><a href="secondshower.html" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
+            <li><a href="test.html" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
+            <li><a href="#" lang="th" class="text-black hover:text-gray-100">เกี่ยวกับแบรนด์</a></li>
+            
+        </ul>
+        <select id="languageSelector" lang="th" class="text-black p-2 rounded">
+            <option value="th">ภาษาไทย</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+</nav>
+
 <body class="min-h-screen flex flex-col">
     
-    <nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50">
-        <img src="image/second shower logo.png" alt="Centered Image" class="nav-logo absolute">
+    <!-- <nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50"> -->
+        <!-- <img src="image/second shower logo.png" alt="Centered Image" class="nav-logo absolute">
         <div class="container mx-auto flex justify-between items-center">
             <ul class="flex space-x-5">
                 <li><a href="#" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
@@ -93,10 +134,10 @@
             </ul>
             <select id="languageSelector" lang="th" class="text-black p-2 rounded">
                 <option value="th">ภาษาไทย</option>
-                <option value="en">English</option>
-            </select>
-        </div>
-    </nav>
+                <option value="en">English</option> -->
+            <!-- </select> -->
+        <!-- </div> -->
+    <!-- </nav> -->
 
     <div class="relative h-screen flex-shrink-0">
         <div id="slideshow" class="fixed inset-0 w-full h-full z-[-1]">
@@ -170,6 +211,29 @@
         </div>
     </div>
 
+    <!-- our values -->
+    <div class="value-heading" style="background-color: rgb(255, 255, 255);  ">
+        <p lang="th" class="text-3xl text-center" ><br>เอกลักษณ์ของเรา</p> 
+    </div>
+
+    <div class="values" style="background-color: rgb(255, 255, 255); ">
+        
+        <div class="container1">
+            <br>
+            <img src="image/Mood (1).jpg" alt="ภาพเกาะ">
+            <p lang="th" class="text-left"><br>ห้องน้ำไม่เป็นเพียงแค่พื้นที่สำหรับการอาบน้ำ เแต่จะเป็นพื้นที่ที่ช่วยผ่อนคลายและเงียบสงบที่สามารถรวบรวมความคิดและเติมพลังเติมความสดชื่นให้กับร่างกายที่เหน็ดเหนื่อยมาทั้งวัน หรือเพื่อเตรียมร่างกายให้พร้อมรับวันใหม่ๆ ด้วยกลิ่นซิกเนเจอร์ของ Second Shower ที่ดึงเอกลักษณ์ของเกาะที่เงียบสงบและอากาศที่บริสุทธิ์​
+            </p>
+            <br>
+        </div>
+        <div class="container1">
+            <br>
+            <img src="image/Mood (2).jpg" alt="วิตามิน">
+            <p lang="th">วิตามินเป็นสารประกอบที่จำเป็นต่อร่างกายของเราและเป็นส่วนผสมที่โดดเด่นที่สุดในเครื่องสำอาง นักวิจัยของ Secondshower  ทำการศึกษาวิจัยเชิงลึกเกี่ยวกับวิตามินและพัฒนาสูตรผลิตภัณฑ์เครื่องสำอางแต่ละชนิดด้วยปริมาณวิตามินที่สูงซึ่งปรับให้เหมาะกับวัตถุประสงค์เฉพาะของผลิตภัณฑ์นั้นๆ​
+            </p>
+            <br>
+        </div>
+
+    </div>
     <script>
         // Slideshow functionality
         const slideshow = document.getElementById('slideshow');
