@@ -9,7 +9,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-         
+        
         /* ใช้ CSS pseudo-class สำหรับภาษาไทย */
         [lang="th"] {
             font-family: 'Noto Sans Thai', sans-serif;
@@ -88,7 +88,14 @@
 
         .container1 {
             width: 50%;
-            text-align: center;
+            left: 50%;
+            
+        }
+
+        .container2 img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ทำให้รูปภาพไม่เบี้ยว */
         }
 
         .values {
@@ -103,6 +110,8 @@
             font-weight: bold;
             /* margin-bottom: 20px; Adds space below the heading */
         }
+
+
     </style>
 </head>
 <nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50">
@@ -110,7 +119,7 @@
     <div class="container mx-auto flex justify-between items-center">
         <ul class="flex space-x-5">
             <li><a href="secondshower.html" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
-            <li><a href="test.html" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
+            <li><a href="#" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
             <li><a href="#" lang="th" class="text-black hover:text-gray-100">เกี่ยวกับแบรนด์</a></li>
             
         </ul>
@@ -170,16 +179,14 @@
                     <div class="relative w-full h-60 rounded-md mb-4 overflow-hidden">
                         <img src="image/re_vita_showerhead_filter_M_main_image.jpg" alt="Product Image" class="absolute inset-0 w-full h-full object-cover">
                     </div>
-                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง </h3> </p>
-                    <p lang="th" class="text-black-600">( ไม่มีกลิ่น )</p>
+                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง<br> ( ไม่มีกลิ่น )</h3> </p>
                     <p lang="th" class="text-black-600">790.00 ฿</p>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <div class="relative w-full h-60 rounded-md mb-4 overflow-hidden">
                         <img src="image/re_vita_showerhead_filter_Z_main_image.jpg" alt="Product Image" class="absolute inset-0 w-full h-full object-cover">
                     </div>
-                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง</h3> </p>
-                    <p lang="th" class="text-black-600">( 3 กลิ่น )</p>
+                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง<br>( 3 กลิ่น )</h3> </p>
                     <p lang="th" class="text-black-600">790.00 ฿</p>
                 </div>
                 
@@ -193,7 +200,7 @@
     </div>
 
     <!-- Brand Story -->
-    <div class="min-h-screen p-8" style="background-color: rgb(207, 225, 225);">
+    <!-- <div class="min-h-screen p-8" style="background-color: rgb(207, 225, 225);">
         <div class="container flex">
             <div class="text-content flex-1 pr-4">
                 <p lang="en" class="text-2xl">Brand Story <br> <br></p>
@@ -209,6 +216,25 @@
                 </div>
             </div>
         </div>
+    </div> -->
+        
+    <div class="min-h-screen values" style="background-color: rgb(207, 225, 225); ">
+        
+        <div class="container1" style="padding-left: 40px; padding-right: 100px;">
+            <p lang="en" class="text-2xl text-left" ><br>Brand Story <br> <br></p>
+                <p lang="th" class="text-3xl text-black font-semibold mb-1 text-left" ><br>การอาบน้ำของคุณจะรู้สึกแตกต่างไปในไม่กี่วินาที​​​​</p>
+                <p lang="th" class="text-xl text-left"><br> <br>"Second Shower" จะช่วยเริ่มต้นขั้นตอนการดูแลผิวของคุณได้ตั้งแต่ในห้องน้ำ ทำให้การดูแลผิวและเพิ่มความความชุ่มชื้นให้กับผิวนั้นมีประสิทธิภาพมากยิ่งขึ้น​</p>
+                <!-- <br><br><button lang="th" style=" background-color: #ebf1f2; border-radius: 50px;" class=" text-black px-4 py-2 rounded hover:bg-blue-200 transition-colors">
+                    อ่านเพิ่มเติม
+                </button> -->
+                <br><br><a href="URL_TO_YOUR_PAGE" lang="th" style="background-color: #ebf1f2; border-radius: 50px;" class="text-black px-4 py-2 rounded hover:bg-blue-200 transition-colors inline-block">
+                    อ่านเพิ่มเติม
+                </a>
+        </div>
+        <div class="container2">
+            <img src="image/women.png" alt="Women"> 
+        </div>
+
     </div>
 
     <!-- our values -->
@@ -220,15 +246,17 @@
         
         <div class="container1">
             <br>
-            <img src="image/Mood (1).jpg" alt="ภาพเกาะ">
-            <p lang="th" class="text-left"><br>ห้องน้ำไม่เป็นเพียงแค่พื้นที่สำหรับการอาบน้ำ เแต่จะเป็นพื้นที่ที่ช่วยผ่อนคลายและเงียบสงบที่สามารถรวบรวมความคิดและเติมพลังเติมความสดชื่นให้กับร่างกายที่เหน็ดเหนื่อยมาทั้งวัน หรือเพื่อเตรียมร่างกายให้พร้อมรับวันใหม่ๆ ด้วยกลิ่นซิกเนเจอร์ของ Second Shower ที่ดึงเอกลักษณ์ของเกาะที่เงียบสงบและอากาศที่บริสุทธิ์​
+            <img src="image/Mood (1).jpg" alt="ภาพเกาะ" style="padding-left: 40px; padding-right: 20px;">
+            <p lang="th" class="text-left font-semibold text-xl " style="padding-left: 40px; padding-right: 20px;"><br>การบำบัดรักษาด้วยกลิ่นหอมในห้องน้ำของคุณ</p>
+            <p lang="th" class="text-left" style="padding-left: 40px; padding-right: 20px;"><br>ห้องน้ำไม่เป็นเพียงแค่พื้นที่สำหรับการอาบน้ำ แต่จะเป็นพื้นที่ที่ช่วยผ่อนคลายและเงียบสงบที่สามารถรวบรวม<br>ความคิดและเติมพลัง เติมความสดชื่นให้กับร่างกายที่เหน็ดเหนื่อยมาทั้งวัน หรือเพื่อเตรียมร่างกายให้พร้อมรับวันใหม่ ๆ ด้วยกลิ่นซิกเนเจอร์ของ Second Shower ที่ดึงเอกลักษณ์ของเกาะที่เงียบสงบและอากาศที่บริสุทธิ์​
             </p>
             <br>
         </div>
         <div class="container1">
             <br>
-            <img src="image/Mood (2).jpg" alt="วิตามิน">
-            <p lang="th">วิตามินเป็นสารประกอบที่จำเป็นต่อร่างกายของเราและเป็นส่วนผสมที่โดดเด่นที่สุดในเครื่องสำอาง นักวิจัยของ Secondshower  ทำการศึกษาวิจัยเชิงลึกเกี่ยวกับวิตามินและพัฒนาสูตรผลิตภัณฑ์เครื่องสำอางแต่ละชนิดด้วยปริมาณวิตามินที่สูงซึ่งปรับให้เหมาะกับวัตถุประสงค์เฉพาะของผลิตภัณฑ์นั้นๆ​
+            <img src="image/Mood (2).jpg" alt="วิตามิน" style="padding-left: 20px; padding-right: 40px;">
+            <p lang="th" class="text-left font-semibold text-xl " style="padding-left: 20px; padding-right: 40px;"><br>สูตรวิตามินที่มีประสิทธิภาพมากที่สุด</p>
+            <p lang="th" class="text-left" style="padding-left: 20px; padding-right: 40px;"><br>วิตามินเป็นสารประกอบที่จำเป็นต่อร่างกายของเราและเป็นส่วนผสมที่โดดเด่นที่สุดในเครื่องสำอาง นักวิจัยของ Second shower ทำการศึกษาวิจัยเชิงลึกเกี่ยวกับวิตามินและพัฒนาสูตรผลิตภัณฑ์เครื่องสำอางแต่ละชนิดด้วยปริมาณวิตามินที่สูงซึ่งปรับให้เหมาะกับวัตถุประสงค์เฉพาะของผลิตภัณฑ์นั้น ๆ​
             </p>
             <br>
         </div>
