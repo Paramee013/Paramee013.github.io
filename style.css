@@ -1,13 +1,168 @@
+[lang="th"] {
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+/* ฟอนต์สำหรับภาษาอังกฤษ */
+[lang="en"] {
+    font-family: 'Heebo', sans-serif;
+}
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 1;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.slideshow-image.active {
+    opacity: 1;
+    z-index: -1; /* อยู่ด้านล่างของโลโก้ */
+}
+
+/* เริ่มต้นด้วย navbar ที่โปร่งใส */
+.navbar {
+    background-color: transparent !important ;
+    transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนแปลงสีพื้นหลัง */
+    padding: 10px 20px;
+}
+
+.navbar .transparent {
+    background-color: transparent !important; /* ทำให้ navbar เป็นโปร่งใส */
+}
+
+.navbar.scrolled {
+    background-color: white !important /* เปลี่ยนสีพื้นหลังเป็นขาวเมื่อเลื่อนลง */
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center; /* จัดแนวในแนวตั้งให้กลาง */
+    justify-content: space-between; /* ให้พื้นที่ว่างระหว่างข้อความและรูปภาพ */
+    padding: 0; /* เพิ่มช่องว่างรอบๆ */
+    margin: 0;
+    width: 50%;
 }
-
-.text-content {
-    padding-right: 16px; /* Space between text and image */
+.text {
+    max-width: 50%; /* กำหนดความกว้างสูงสุดของข้อความ */
 }
-
+.image {
+    max-width: 50%; /* กำหนดความกว้างสูงสุดของรูปภาพ */
+}
 .image img {
-    width: 100%; /* Adjust width of image */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* ทำให้รูปภาพเต็มความกว้างของคอนเทนเนอร์ */
+    height: auto; /* ป้องกันการบิดเบี้ยวของรูปภาพ */
+}
+
+.container img {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.container1 {
+    width: 50%;
+    left: 50%;
+    
+}
+
+.container2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ทำให้รูปภาพไม่เบี้ยว */
+}
+
+.values {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.value-heading {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold;
+    /* margin-bottom: 20px; Adds space below the heading */
+}
+
+.line {
+    border-top: 1px solid black; /* สร้างเส้นตรงสีดำ */
+    margin-left: 40px; /* เว้นระยะห่าง 40px จากด้านซ้าย */
+    margin-right: 40px; /* เว้นระยะห่าง 40px จากด้านขวา */
+}
+
+/* ชุดสไตล์พื้นฐาน */
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+}
+
+/* สไตล์สำหรับลิงก์ */
+.navbar-nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/* ปรับการจัดตำแหน่งของลิงก์ */
+.navbar-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* การจัดตำแหน่งที่เหมาะสม */
+@media (max-width: 767px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+    .navbar-nav .col-md-4 {
+        text-align: center;
+    }
+}
+
+.nav-logo {
+    max-width: 100%; /* Adjust width as needed */
+    height: 50px; /* Height as specified */
+    background-image: url('image/secondshower.png');
+    background-size: cover; /* Ensures the image covers the area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-color: transparent; /* Sets background color to transparent */
+}
+
+.btn-test button{
+    background-color: #ebf1f2;
+}
+
+.btn-test button:hover{
+    background-color: rgb(109, 139, 159);
+}
+
+.text-color li {
+   color: black;
+   padding: 20px
+}
+
+.text-color li:hover {
+   color: rgb(127, 127, 127);
+}
+
+.carousel-inner-custom {
+    height: 100%;
+    margin-top: 0rem !important;
 }
