@@ -6,156 +6,80 @@
     <title>Slideshow with Navbar</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        
-        /* ใช้ CSS pseudo-class สำหรับภาษาไทย */
-        [lang="th"] {
-            font-family: 'Noto Sans Thai', sans-serif;
-        }
-
-        /* ฟอนต์สำหรับภาษาอังกฤษ */
-        [lang="en"] {
-            font-family: 'Heebo', sans-serif;
-        }
-        .slideshow-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .slideshow-image.active {
-            opacity: 1;
-            z-index: -1; /* อยู่ด้านล่างของโลโก้ */
-        }
-        .nav-logo {
-            top: 50%; /* ปรับตำแหน่งแนวตั้งให้ตรงกลาง */
-            left: 50%; /* ปรับตำแหน่งแนวนอนให้ตรงกลาง */
-            transform: translate(-50%, -50%); /* ใช้เพื่อจัดตำแหน่งให้ตรงกลางอย่างแม่นยำ */
-            width: 420px; /* กำหนดขนาดตามต้องการ */
-            height: auto;
-        }
-        /* เริ่มต้นด้วย navbar ที่โปร่งใส */
-        .navbar {
-            transition: background-color 0.3s ease; /* เพิ่มการเปลี่ยนแปลงสีพื้นหลัง */
-        }
-
-        .navbar.transparent {
-            background-color: transparent; /* ทำให้ navbar เป็นโปร่งใส */
-        }
-
-        .navbar.scrolled {
-            background-color: white; /* เปลี่ยนสีพื้นหลังเป็นขาวเมื่อเลื่อนลง */
-        }
-
-        .center-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            display: flex;
-            align-items: center; /* จัดแนวในแนวตั้งให้กลาง */
-            justify-content: space-between; /* ให้พื้นที่ว่างระหว่างข้อความและรูปภาพ */
-            padding: 0; /* เพิ่มช่องว่างรอบๆ */
-            margin: 0;
-            width: 50%;
-        
-        }
-        .text {
-            max-width: 50%; /* กำหนดความกว้างสูงสุดของข้อความ */
-        }
-        .image {
-            max-width: 50%; /* กำหนดความกว้างสูงสุดของรูปภาพ */
-        }
-        .image img {
-            max-width: 100%; /* ทำให้รูปภาพเต็มความกว้างของคอนเทนเนอร์ */
-            height: auto; /* ป้องกันการบิดเบี้ยวของรูปภาพ */
-        }
-        
-        .container img {
-            width: 80%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .container1 {
-            width: 50%;
-            left: 50%;
-            
-        }
-
-        .container2 img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* ทำให้รูปภาพไม่เบี้ยว */
-        }
-
-        .values {
-            display: flex;
-            justify-content: space-between;
-            margin: 0;
-            padding: 0;
-        }
-
-        .value-heading {
-            font-size: 24px; /* Adjust the font size as needed */
-            font-weight: bold;
-            /* margin-bottom: 20px; Adds space below the heading */
-        }
-
-
-    </style>
 </head>
-<nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50">
-    <img src="image/second shower logo.png" alt="Centered Image" class="nav-logo absolute">
-    <div class="container mx-auto flex justify-between items-center">
-        <ul class="flex space-x-5">
-            <li><a href="secondshower.html" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
-            <li><a href="#" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
-            <li><a href="#" lang="th" class="text-black hover:text-gray-100">เกี่ยวกับแบรนด์</a></li>
-            
-        </ul>
-        <select id="languageSelector" lang="th" class="text-black p-2 rounded">
-            <option value="th">ภาษาไทย</option>
-            <option value="en">English</option>
-        </select>
-    </div>
-</nav>
 
-<body class="min-h-screen flex flex-col">
+<header>
     
-    <!-- <nav class="fixed top-0 left-5 right-5 bg-transparent backdrop-sm p-4 z-50"> -->
-        <!-- <img src="image/second shower logo.png" alt="Centered Image" class="nav-logo absolute">
-        <div class="container mx-auto flex justify-between items-center">
-            <ul class="flex space-x-5">
-                <li><a href="#" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
-                <li><a href="#" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
-                <li><a href="#" lang="th" class="text-black hover:text-gray-100">เกี่ยวกับแบรนด์</a></li>
-                
-            </ul>
-            <select id="languageSelector" lang="th" class="text-black p-2 rounded">
-                <option value="th">ภาษาไทย</option>
-                <option value="en">English</option> -->
-            <!-- </select> -->
-        <!-- </div> -->
-    <!-- </nav> -->
+    <div class="container-fluid navbar fixed top-0 bg-transparent backdrop-sm p-4 z-50">
+        
+        <nav class="" style="width: 100% !important;">
+            <div class="row col-md-12">
+            <div class="col-md-4 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <!-- <ul class="flex space-x-5">
+                    <li><a href="secondshowerthailand.html" lang="th" class="text-black hover:text-gray-100">หน้าแรก</a></li>
+                    <li><a href="#" lang="th" class="text-black hover:text-gray-100">สินค้า</a></li>
+                    <li><a href="brandstory.html" lang="th" class="text-black hover:text-gray-100">เกี่ยวกับแบรนด์</a></li>
+                </ul> -->
+                <ul class="flex space-x-0 text-color">
+                    <li><a href="#" lang="th" class="">หน้าแรก</a></li>
+                    <li><a href="#" lang="th" class="">สินค้า</a></li>
+                    <li><a href="#" lang="th" class="">เกี่ยวกับแบรนด์</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div alt="Centered Image" class="nav-logo" >
+                </div>
+            </div>
 
-    <div class="relative h-screen flex-shrink-0">
+            <div  class="col-md-1 offset-3 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-end">
+                <select id="languageSelector" lang="th" class="text-black p-2 rounded">
+                    <option value="th">ภาษาไทย</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+        </div>
+        </nav>
+    
+    </div>
+
+    <div class="relative h-screen flex-shrink-0"></div>
         <div id="slideshow" class="fixed inset-0 w-full h-full z-[-1]">
             <div class="slideshow-image active" style="background-image: url('image/re_vita_showerhead_filter_X_image_3.jpg');"></div>
-            <div class="slideshow-image active" style="background-image: url('image/Model Desk Top.jpg');"></div>
-            <div class="slideshow-image active" style="background-image: url('image/re_vita_showerhead_filter_J_image_2.jpg');"></div>
+            <div class="slideshow-image active" style="background-image: url('image/ModelDeskTop.jpg');"></div>
+            <div class="slideshow-image active" style="background-image: url('image/re_vita_showerhead_filter_X_image_1.jpg');"></div>
         </div>     
     </div>
+</header>
 
+<body>
+    <!-- <div id="carousel5" class="relative h-screen flex-shrink-0" data-bs-ride="carousel">
+        
+    
+        <div class="carousel-inner carousel-inner-custom">
+            <div class="slideshow-image active">
+                <img src="image/ModelDeskTop.jpg" class="d-block w-100" alt="flower" />
+            </div>
+            <div class="slideshow-image active">
+                <img src="image/re_vita_showerhead_filter_X_image_3.jpg" class="d-block w-100" alt="flower" />
+            </div>
+            <div class="slideshow-image active">
+                <img src="image/re_vita_showerhead_filter_X_image_1.jpg" class="d-block w-100" alt="flower" />
+            </div>
+        </div>
+       
+    </div> -->
+    
+    <!-- <div class="position-relative overflow-hidden text-center bg-light " 
+         style="background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url('image/re_vita_showerhead_filter_X_image_3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: calc(120vh - 100px);
+            margin-top: 0rem !important;">
+    </div> -->
     <div class="bg-white min-h-screen p-8">
         <div class="max-w-6xl mx-auto">
             <h2 lang="th" class="text-4xl font-semibold mb-8 text-center">สินค้าขายดี</h2>
@@ -179,14 +103,16 @@
                     <div class="relative w-full h-60 rounded-md mb-4 overflow-hidden">
                         <img src="image/re_vita_showerhead_filter_M_main_image.jpg" alt="Product Image" class="absolute inset-0 w-full h-full object-cover">
                     </div>
-                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง<br> ( ไม่มีกลิ่น )</h3> </p>
+                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง </h3> </p>
+                    <p lang="th" class="text-black-600">( ไม่มีกลิ่น )</p>
                     <p lang="th" class="text-black-600">790.00 ฿</p>
                 </div>
                 <div class="bg-gray-100 p-6 rounded-lg shadow-md">
                     <div class="relative w-full h-60 rounded-md mb-4 overflow-hidden">
                         <img src="image/re_vita_showerhead_filter_Z_main_image.jpg" alt="Product Image" class="absolute inset-0 w-full h-full object-cover">
                     </div>
-                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง<br>( 3 กลิ่น )</h3> </p>
+                    <p lang="th" class="text-20 font-semibold mb-2">วิตามินฟิลเตอร์ 3 ชิ้น/กล่อง</h3> </p>
+                    <p lang="th" class="text-black-600">( 3 กลิ่น )</p>
                     <p lang="th" class="text-black-600">790.00 ฿</p>
                 </div>
                 
@@ -199,37 +125,17 @@
         </div>
     </div>
 
-    <!-- Brand Story -->
-    <!-- <div class="min-h-screen p-8" style="background-color: rgb(207, 225, 225);">
-        <div class="container flex">
-            <div class="text-content flex-1 pr-4">
-                <p lang="en" class="text-2xl">Brand Story <br> <br></p>
-                <p lang="th" class="text-2xl text-gray-800 font-semibold mb-1 text-left">การอาบน้ำของคุณ จะให้ความรู้สึกที่ไม่เหมือนเดิม​​</p>
-                <p lang="th" class="text-2xl text-gray-800 font-semibold mb-1 text-left">ในไม่กี่วินาที แค่คุณใช้ Secondshower​​</p>
-                <p lang="th" class="text-xl"><br> <br>"Second Shower" จะช่วยเริ่มต้นขั้นตอนการดูแลผิวของคุณได้ตั้งแต่ในห้องน้ำ <br>ทำให้การดูแลผิว และเพิ่มความความชุ่มชื้นให้กับผิวนั้นมีประสิทธิภาพมากยิ่งขึ้น​</p>
-                <br><button lang="th" style="background-color: #ebf1f2;" class=" text-black px-4 py-2 rounded hover:bg-blue-200 transition-colors">
-                    อ่านเพิ่มเติม
-                </button>
-            </div>
-                <div class="image flex-1">
-                    <img src="image/women.png" alt="Women">
-                </div>
-            </div>
-        </div>
-    </div> -->
-        
     <div class="min-h-screen values" style="background-color: rgb(207, 225, 225); ">
         
         <div class="container1" style="padding-left: 40px; padding-right: 100px;">
             <p lang="en" class="text-2xl text-left" ><br>Brand Story <br> <br></p>
                 <p lang="th" class="text-3xl text-black font-semibold mb-1 text-left" ><br>การอาบน้ำของคุณจะรู้สึกแตกต่างไปในไม่กี่วินาที​​​​</p>
                 <p lang="th" class="text-xl text-left"><br> <br>"Second Shower" จะช่วยเริ่มต้นขั้นตอนการดูแลผิวของคุณได้ตั้งแต่ในห้องน้ำ ทำให้การดูแลผิวและเพิ่มความความชุ่มชื้นให้กับผิวนั้นมีประสิทธิภาพมากยิ่งขึ้น​</p>
-                <!-- <br><br><button lang="th" style=" background-color: #ebf1f2; border-radius: 50px;" class=" text-black px-4 py-2 rounded hover:bg-blue-200 transition-colors">
-                    อ่านเพิ่มเติม
-                </button> -->
-                <br><br><a href="URL_TO_YOUR_PAGE" lang="th" style="background-color: #ebf1f2; border-radius: 50px;" class="text-black px-4 py-2 rounded hover:bg-blue-200 transition-colors inline-block">
-                    อ่านเพิ่มเติม
-                </a>
+                <div style="padding: 50px 0 0 0 !important" class="btn-test">
+                    <button lang="th" class=" text-black px-4 py-2 rounded-5 transition-colors">
+                        อ่านเพิ่มเติม
+                    </button>
+                </div>
         </div>
         <div class="container2">
             <img src="image/women.png" alt="Women"> 
@@ -237,15 +143,15 @@
 
     </div>
 
-    <!-- our values -->
-    <div class="value-heading" style="background-color: rgb(255, 255, 255);  ">
-        <p lang="th" class="text-3xl text-center" ><br>เอกลักษณ์ของเรา</p> 
+
+    <div class="value-heading" style="background-color: rgb(255, 255, 255);  "></div>
+        <p lang="th" class="text-3xl font-semibold text-center" ><br><br>เอกลักษณ์ของเรา</p> 
     </div>
 
     <div class="values" style="background-color: rgb(255, 255, 255); ">
         
         <div class="container1">
-            <br>
+            <br><br>
             <img src="image/Mood (1).jpg" alt="ภาพเกาะ" style="padding-left: 40px; padding-right: 20px;">
             <p lang="th" class="text-left font-semibold text-xl " style="padding-left: 40px; padding-right: 20px;"><br>การบำบัดรักษาด้วยกลิ่นหอมในห้องน้ำของคุณ</p>
             <p lang="th" class="text-left" style="padding-left: 40px; padding-right: 20px;"><br>ห้องน้ำไม่เป็นเพียงแค่พื้นที่สำหรับการอาบน้ำ แต่จะเป็นพื้นที่ที่ช่วยผ่อนคลายและเงียบสงบที่สามารถรวบรวม<br>ความคิดและเติมพลัง เติมความสดชื่นให้กับร่างกายที่เหน็ดเหนื่อยมาทั้งวัน หรือเพื่อเตรียมร่างกายให้พร้อมรับวันใหม่ ๆ ด้วยกลิ่นซิกเนเจอร์ของ Second Shower ที่ดึงเอกลักษณ์ของเกาะที่เงียบสงบและอากาศที่บริสุทธิ์​
@@ -253,54 +159,63 @@
             <br>
         </div>
         <div class="container1">
-            <br>
+            <br><br>
             <img src="image/Mood (2).jpg" alt="วิตามิน" style="padding-left: 20px; padding-right: 40px;">
             <p lang="th" class="text-left font-semibold text-xl " style="padding-left: 20px; padding-right: 40px;"><br>สูตรวิตามินที่มีประสิทธิภาพมากที่สุด</p>
             <p lang="th" class="text-left" style="padding-left: 20px; padding-right: 40px;"><br>วิตามินเป็นสารประกอบที่จำเป็นต่อร่างกายของเราและเป็นส่วนผสมที่โดดเด่นที่สุดในเครื่องสำอาง นักวิจัยของ Second shower ทำการศึกษาวิจัยเชิงลึกเกี่ยวกับวิตามินและพัฒนาสูตรผลิตภัณฑ์เครื่องสำอางแต่ละชนิดด้วยปริมาณวิตามินที่สูงซึ่งปรับให้เหมาะกับวัตถุประสงค์เฉพาะของผลิตภัณฑ์นั้น ๆ​
             </p>
             <br>
         </div>
-
     </div>
-    <script>
-        // Slideshow functionality
-        const slideshow = document.getElementById('slideshow');
-        const slides = slideshow.getElementsByClassName('slideshow-image');
-        let currentSlide = 0;
-
-        function showNextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(showNextSlide, 5000);
-
-        // Scroll button functionality
-        const scrollButton = document.getElementById('scrollButton');
-        scrollButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        });
-
-        // Language selector functionality
-        const languageSelector = document.getElementById('languageSelector');
-        languageSelector.addEventListener('change', (e) => {
-            console.log(`Language changed to ${e.target.value}`);
-            // Implement actual language change logic here
-        });
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) { // เปลี่ยนค่าตามที่คุณต้องการ
-                navbar.classList.remove('transparent');
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-                navbar.classList.add('transparent');
-            }
-        });
-    </script>
 </body>
+
+<footer>
+    
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
+
+<script>
+    // Slideshow functionality
+    const slideshow = document.getElementById('slideshow');
+    const slides = slideshow.getElementsByClassName('slideshow-image');
+    let currentSlide = 0;
+
+    function showNextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(showNextSlide, 5000);
+
+    // Scroll button functionality
+    const scrollButton = document.getElementById('scrollButton');
+    scrollButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    // Language selector functionality
+    const languageSelector = document.getElementById('languageSelector');
+    languageSelector.addEventListener('change', (e) => {
+        // console.log(Language changed to ${e.target.value});
+        // Implement actual language change logic here
+    });
+</script>
+
+<script>
+    // ตรวจสอบการเลื่อนหน้าเว็บ
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+
+        // เปลี่ยนคลาสเมื่อเลื่อนลง 50px
+        if (window.scrollY > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
