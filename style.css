@@ -94,7 +94,7 @@
 }
 
 .line {
-    border-top: 1px solid black; /* สร้างเส้นตรงสีดำ */
+    border-top: 1px solid rgb(78, 80, 78); /* สร้างเส้นตรงสีดำ */
     margin-left: 40px; /* เว้นระยะห่าง 40px จากด้านซ้าย */
     margin-right: 40px; /* เว้นระยะห่าง 40px จากด้านขวา */
 }
@@ -165,4 +165,34 @@
 .carousel-inner-custom {
     height: 100%;
     margin-top: 0rem !important;
+}
+
+.container3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+.column {
+    padding: 20px;
+    
+}
+.img {
+    /* width: 100%;
+    height: auto; */
+    width: 80%; /* ปรับให้เต็มคอลัมน์ */
+    max-width: 100px; /* กำหนดขนาดสูงสุด */
+    height: auto; /* รักษาสัดส่วนของรูปภาพ */
+}
+
+
+.logo {
+    width: 20px; /* ขนาดโลโก้ */
+    height: auto;
+    margin-right: 8px; /* ระยะห่างระหว่างโลโก้กับข้อความ */
+}
+
+.containerlogo {
+    display: flex;
+    align-items: center;
 }
