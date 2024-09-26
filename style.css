@@ -139,7 +139,7 @@
     max-width: 100%; /* Adjust width as needed */
     height: 50px; /* Height as specified */
     background-image: url('image/secondshowerlogo.png');
-    background-size: cover; /* Ensures the image covers the area */
+    background-size: cover; /*Ensures the image covers the area */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
     background-color: transparent; /* Sets background color to transparent */
@@ -195,4 +195,26 @@
 .containerlogo {
     display: flex;
     align-items: center;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #020202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* เริ่มต้นซ่อนปุ่ม */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+
+.scroll-to-top:hover {
+    background-color: #1ead28;
 }
